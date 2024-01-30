@@ -1,0 +1,14 @@
+<h1>Edit <%=@book.title%></h1>
+<%= link_to("Home", books_path)%>
+
+<%= form_for(@book) do |f| %>
+    <%= f.label :title %><br>
+    <%= f.text_field(:title) %><br>
+    <%= f.label :author %><br>
+    <%= f.text_field(:author) %><br>
+    <%= f.label :price %><br>
+    <%= f.number_field(:price) %><br>
+    <%= f.label :published %><br>
+    <%= f.date_field(:published) %><br><br>
+    <%= f.submit("Edit Book") %>
+<% end %>
