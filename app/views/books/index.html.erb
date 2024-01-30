@@ -1,0 +1,17 @@
+<div class="notice"><%= @message %></div>
+<h1>Book Collection</h1>
+<% @books.each do |book| %>
+    <div style="display: flex; justify-content: space-between;">
+        <p>Title: <%= book.title %> </p>
+        <p>Author: <%= book.author %></p>
+        <p>Price: <%= book.price %></p>
+        <p>Published date: <%= book.published %></p>
+
+        <%= link_to("Show", book_path(book), class: "action show") %>
+        <%= link_to("Edit", edit_book_path(book), class: "action edit") %>
+        <%= link_to("Delete", delete_book_path(book), class: "action delete") %>
+    </div>
+    <br>
+<% end %>
+
+<%= link_to('Add Book', {controller: 'books', action: 'new'})%>
